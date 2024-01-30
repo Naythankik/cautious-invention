@@ -1,0 +1,567 @@
+:root{
+    --body-color: #fff;
+    --anchor-color: #000000;
+    --header-color: #000000;
+    --main-header-color: rgb(59, 59, 245);
+    --top-bottom-bg: rgb(165, 219, 223);
+    --bs-font-sans-serif: system-ui,-apple-system,"Segoe UI",Roboto,
+                            "Helvetica Neue",Arial,"Noto Sans","Liberation Sans",
+                            sans-serif,"Apple Color Emoji","Segoe UI Emoji",
+                            "Segoe UI Symbol","Noto Color Emoji";
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+    font-family: var(--bs-font-sans-serif);
+}
+
+.active-nav-hamburger{
+    background-color: #fffffb;
+    opacity: 0.8;
+    width: 100%;
+    margin-top: 236px;
+    z-index: 1;
+}
+
+.active-hamburger-ul{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+    width: 100%;
+    list-style: none;
+}
+
+.active-hamburger-ul a{
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 55px;
+    padding: 0;
+    position: relative;
+    font-family: sans-serif;
+}
+
+.close-hamburger{
+    display: block;
+    font-size: 2rem;
+    font-weight: 400;
+    position: absolute;
+    left: 10px;
+    outline: none;
+    background: none;
+    color: black;
+    border: none;
+    z-index: 100;
+}
+
+
+img.icons{
+    width: 2rem;
+    background: none;
+}
+
+a{
+    text-decoration: none;
+    color: var(--anchor-color);
+}
+
+
+button{
+    padding: 15px 10px;
+    border-radius: 5px;
+    border: 1px solid white;
+    background-color: var(--top-bottom-bg);
+    cursor: pointer;
+    color: var(--anchor-color);
+    font-weight: 600;
+    font-size: 15px;
+    text-transform: capitalize;
+    transition: all .5s ease;
+}
+
+button:hover{
+    opacity: .9;
+}
+
+div.body{
+    background-color: var(--body-color);
+    min-height: 100vh;
+    width: auto;
+}
+
+/*Header Styling*/
+button.hamburger,
+button.unhamburger{
+    display: none;
+}
+
+header{
+    display: flex;
+    padding: 1rem 3rem;
+    width: inherit;
+    height: 3rem;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--top-bottom-bg);
+    position: relative;
+}
+
+nav.header > ul{
+    display: flex;
+    list-style: none;
+    gap: 7rem;
+}
+
+nav.header > ul a{
+    font-size: 20px;
+    font-weight: 600;
+    height: 62px;
+    line-height: 62px;
+    padding: 0;
+    position: relative;
+    font-family: sans-serif;
+}
+
+nav.header > ul a:hover{
+    color: var(--body-color);
+}
+
+/** Main styling **/
+main{
+    display: flex;
+    flex-direction: column;
+}
+
+section.request-inspection,
+section.janitor-display,
+section.contact{
+    width: 100%;
+    background-color: whitesmoke;
+}
+
+div.request-inspection-container,
+div.contact-card{
+    display: grid;
+    grid-template-columns: auto;
+    width: 80%;
+    margin: 0 auto;
+    padding: 40px 0;
+
+}
+div.request-inspection-header{
+    margin-bottom: 25px;
+    position: relative;
+}
+
+div.request-inspection-header span,
+span.contact-title,
+div.contact-card-info h2 {
+    font-size: 30px;
+    color: var(--main-header-color);
+    position: relative;
+    font-weight: 700;
+    line-height: 40px;
+    text-transform: capitalize;
+}
+
+form.request-inspection-form div.row{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+div.row input,
+div.row select,
+div.row button{
+    outline: none;
+    border: 1px solid lightgray;
+    border-radius: 12px;
+    padding: 17px 10px;
+    margin-bottom: 10px;
+    background: white;
+}
+
+
+section.working-process{
+    display: flex;
+    /* grid-template-columns: 1fr 1fr; */
+    width: 100%;
+}
+
+div.cleaning-image img,
+section.janitor-display img{
+    width: 100%;
+    height: 100%;
+}
+div.process-details{
+    display: grid;
+    padding: 40px 60px
+}
+
+
+div.process-details h2{
+    color: var(--main-header-color);
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+div.process-details article > p{
+    text-transform: uppercase;
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 52px;
+    color: #101010;
+    margin: 0;
+}
+
+div.process-description{
+margin: 25px;
+}
+
+div.process-description h4{
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 700;
+    color: #101010;
+    margin: 0 0 10px;
+}
+
+div.contact-card{
+    grid-template-columns: 1fr 1fr;
+}
+
+div.contact-card form,
+div.contact-card-info{
+    display: grid;
+    gap: 10px;
+    width: 80%;
+}
+
+
+div.contact-card form div.name,
+div.contact-card form div.contact{
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr 1fr;
+
+}
+div.contact-card form div.name > *,
+div.contact-card form div.contact > *,
+textarea,
+div.contact-card button
+{
+    outline: none;
+    border: 1px solid lightgray;
+    border-radius: 12px;
+    padding: 17px 10px;
+    margin-bottom: 10px;
+    background: white;
+}
+
+textarea{
+    resize: none;
+}
+
+div.contact-card button
+{
+background-color: var(--body-color);
+}
+
+div.contact-card-info{
+    display: flex;
+    flex-direction: column;
+}
+
+
+div.contact-options{
+    display: flex;
+    align-items: flex-start;
+    gap: 13px;
+    margin-bottom: 15px;
+}
+div.contact-option-detail{
+    display: grid;
+    gap: 11px;
+}
+div.contact-option-detail a{
+    color: var(--header-color);
+    font-size: 18px;
+}
+
+
+
+/**End of main styling **/
+
+
+/** The Footer Styling **/
+
+footer{
+    background: var(--top-bottom-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 4rem;
+    position: relative;
+}
+
+footer a:hover{
+    text-decoration: underline;
+}
+
+div.footer{
+    display: inherit;
+    justify-content: inherit;
+    align-items: flex-start;
+}
+
+div.footer h2{
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 600;
+    color: var(--header-color);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+div.left-footer,
+div.center-footer,
+div.right-footer
+{
+    width: calc(100% / 3);
+    display: grid;
+    align-items: start;
+    justify-content: inherit;
+}
+
+div.left-footer > p,
+div.right-footer p{
+    background: none;
+    width: 70%;
+    font-size: 18px;
+    color: var(--body-color);
+}
+div.center-footer{
+    gap: 5px;
+}
+
+div.center-footer img{
+    filter: invert(1);
+}
+div.center-footer a{
+    font-size: 18px;
+    color: var(--body-color);
+}
+
+div.center-footer  a:hover{
+    color: var(--anchor-color);
+}
+
+div.center-footer div.location,
+div.center-footer div.telephone,
+div.center-footer div.email
+{
+    display: flex;
+    gap: 13px;
+    align-items: center;
+}
+div.right-footer{
+    gap: 10px;
+}
+div.right-footer form{
+    display: grid;
+    gap: 10px;
+
+}
+
+div.right-footer input{
+    padding: 15px 10px;
+    border-radius: 10px;
+    outline: 1px solid grey;
+    border: none;
+}
+
+
+
+div.right-footer nav.social-links{
+    display: flex;
+    gap: 10px;
+}
+
+span.copyright{
+    position: absolute;
+    background-color: var(--body-color);
+    width: 100%;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+}
+
+@media screen and (max-width: 1200px) {
+    header{
+        padding: 1rem 2rem;
+    }
+
+    form.request-inspection-form div.row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        gap: 10px;
+    }
+
+
+    section.working-process{
+        flex-direction: column-reverse;
+    }
+
+    div.contact-card {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 40px;
+    }
+    footer{
+        padding: 7rem 1rem;
+    }
+    div.footer{
+        gap: 10px;
+    }
+
+    div.footer h2 {
+        text-align: center;
+    }
+
+    div.left-footer > p, div.right-footer p {
+        width: 100%;
+        text-align: center;
+    }
+
+}
+
+@media screen and (max-width: 1000px) {
+    nav.header > ul {
+        gap: 3rem;
+    }
+    div.request-inspection-container {
+        padding: 20px;
+    }
+
+    form.request-inspection-form div.row {
+        width: 100%;
+        grid-template-columns: auto;
+        justify-content: unset;
+    }
+
+    div.process-details {
+        padding: 10px;
+    }
+
+    div.process-details article > p,
+    div.process-details h2 {
+        text-align: center;
+    }
+
+    div.process-details article > p{
+        font-size: 35px;
+    }
+
+    div.contact-card form,
+    div.contact-card-info {
+        width: 100%;
+        gap: 20px;
+    }
+
+    div.contact-card form div.name,
+    div.contact-card form div.contact {
+        grid-template-columns: 1fr;
+    }
+
+    div.contact-card button {
+        width: fit-content;
+    }
+
+    footer{
+        padding: 10rem 4rem;
+    }
+
+    div.footer{
+        display: grid;
+        gap: 50px;
+    }
+
+    div.left-footer,
+    div.center-footer,
+    div.right-footer {
+        width: 100%;
+        justify-content: unset;
+        justify-items: center;
+        gap:unset;
+    }
+
+    div.center-footer{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    div.left-footer > p,
+    div.right-footer p ,
+    div.footer h2 {
+    text-align: center;
+    }
+
+    div.left-footer > p,
+    div.right-footer p {
+        width: 100%;
+    }
+
+    div.right-footer form {
+        margin: 40px auto;
+        width: inherit;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    header{
+        padding: 0;
+    }
+    
+    nav.header > ul{
+        display: none
+    }
+    button.hamburger{
+        display: block;
+        position: absolute;
+        right: 10px;
+        width: 30px;
+        background: none;
+        outline: none;
+        border: none;
+    }
+    div.hamburger-menu{
+        height: 2px;
+        background: white;
+        position: relative;
+    }
+
+    div.hamburger-menu::after{
+        content: '';
+        position: absolute;
+        height: 2px;
+        width: 100%;
+        background: white;
+        top: -8px;
+        right: 0%;
+    }
+    div.hamburger-menu::before{
+        content: '';
+        position: absolute;
+        height: 2px;
+        width: 100%;
+        background: white;
+        bottom: -8px;
+        right: 0%;
+    }
+    
+}
