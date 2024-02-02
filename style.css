@@ -3,7 +3,7 @@
     --anchor-color: #000000;
     --header-color: #000000;
     --main-header-color: rgb(59, 59, 245);
-    --top-bottom-bg: rgb(165, 219, 223);
+    --top-bottom-bg: rgb(255, 255, 255);
     --bs-font-sans-serif: system-ui,-apple-system,"Segoe UI",Roboto,
                             "Helvetica Neue",Arial,"Noto Sans","Liberation Sans",
                             sans-serif,"Apple Color Emoji","Segoe UI Emoji",
@@ -71,20 +71,47 @@ nav.header > ul{
     display: flex;
     list-style: none;
     gap: 7rem;
+    margin-right: 1rem;
 }
 
 nav.header > ul a{
     font-size: 20px;
-    font-weight: 600;
+    font-weight: 200;
     height: 62px;
     line-height: 62px;
     padding: 0;
     position: relative;
-    font-family: sans-serif;
+    color: #4D89FC;
+    font-family: 'Roboto Condensed', sans-serif;
 }
 
 nav.header > ul a:hover{
-    color: var(--body-color);
+    color: #000;
+    font-weight: 400;
+}
+
+.header-btns {
+    display: flex;
+    margin-left: 3rem;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 200;
+    gap: 15px;
+}
+.login-btn {
+    background: #04A18F;
+    padding: 10px 15px;
+    border-radius: 5px;
+    
+}
+.login-btn a {
+    color: #fff;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 200;
+    font-size: 18px;
+}
+.sign-up a{
+    color: #04A18F;
 }
 
 /** Main styling **/
@@ -117,8 +144,9 @@ div.request-inspection-header{
 div.request-inspection-header span,
 span.contact-title,
 div.contact-card-info h2 {
+    font-family: 'Archivo', sans-serif;
     font-size: 30px;
-    color: var(--main-header-color);
+    color: #4D89FC;
     position: relative;
     font-weight: 700;
     line-height: 40px;
@@ -141,7 +169,10 @@ div.row button{
     margin-bottom: 10px;
     background: white;
 }
-
+input::placeholder {
+    color: #3a3a3a;
+    opacity: .3;
+}
 
 section.working-process{
     display: flex;
