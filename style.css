@@ -51,6 +51,7 @@ div.body{
     background-color: var(--body-color);
     min-height: 100vh;
     width: auto;
+    min-width: 330px;
 }
 
 /*Header Styling*/
@@ -534,8 +535,8 @@ span.copyright{
     }
     button.hamburger{
         display: block;
-        position: absolute;
-        right: 10px;
+        /* position: absolute; */
+        /* right: 10px; */
         width: 30px;
         background: none;
         outline: none;
