@@ -527,7 +527,7 @@ span.copyright{
     }
     div.header-btns {
         justify-content: center;
-        width: 80%;
+        width: 100%;
     }
     nav.header > ul{
         display: none
