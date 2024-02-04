@@ -36,7 +36,6 @@ button{
     padding: 7px 10px;
     border-radius: 5px;
     border: 1px solid lightgrey;
-    /* background: linear-gradient(135deg, var(--body-color), var(--main-header-color)); */
     background: var(--main-header-color);
     cursor: pointer;
     color: var(--body-color);
@@ -140,7 +139,7 @@ section.request-inspection,
 section.janitor-display,
 section.contact{
     width: 100%;
-    background-color: whitesmoke;
+    background-color: white;
 }
 
 div.request-inspection-container,
@@ -180,10 +179,11 @@ div.row select,
 div.row button{
     outline: none;
     border: 1px solid lightgray;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0,.2);
     border-radius: 12px;
     padding: 17px 10px;
     margin-bottom: 10px;
-    background: white;
+    /* background: white; */
 }
 input::placeholder {
     color: #3a3a3a;
@@ -214,23 +214,35 @@ div.process-details h2{
 
 div.process-details article > p{
     text-transform: uppercase;
-    font-size: 42px;
-    font-weight: 700;
-    line-height: 52px;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 21px;
     color: #101010;
     margin: 0;
 }
 
 div.process-description{
-margin: 25px;
+    margin: 25px;
+    position: relative;
+    padding-left: 10px;
 }
 
 div.process-description h4{
     font-size: 20px;
     line-height: 30px;
-    font-weight: 700;
+    font-weight: 500;
     color: #101010;
-    margin: 0 0 10px;
+    margin: 0 0 5px;
+}
+
+div.process-description::before{
+    content: '';
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    background: var(--button-bg);
+    left: -25px;
+    top: 6px;
 }
 
 div.contact-card{
@@ -254,9 +266,11 @@ div.contact-card form div.contact{
 }
 div.contact-card form div.name > *,
 div.contact-card form div.contact > *,
+div.right-footer input,
 textarea{
     outline: none;
     border: 1px solid lightgray;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0,.2);
     border-radius: 12px;
     padding: 17px 10px;
     margin-bottom: 10px;
@@ -285,10 +299,15 @@ div.contact-options{
     gap: 13px;
     margin-bottom: 15px;
 }
+div.contact-options img{
+    filter: invert(39%) sepia(87%) saturate(1697%) hue-rotate(145deg) brightness(92%) contrast(97%);
+}
+
 div.contact-option-detail{
     display: grid;
     gap: 11px;
 }
+
 div.contact-option-detail a{
     color: var(--header-color);
     font-size: 18px;
@@ -299,7 +318,7 @@ div.contact-option-detail a{
 /** The Footer Styling **/
 
 footer{
-    background: var(--top-bottom-bg);
+    background: rgba(4, 161, 143, 1);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -312,36 +331,34 @@ footer a:hover{
 }
 
 div.footer{
-    display: inherit;
-    justify-content: inherit;
-    align-items: flex-start;
+    display: flex;
+    gap: 40px;
 }
 
-div.footer h2{
+div.footer p{
     font-size: 20px;
-    line-height: 30px;
-    font-weight: 600;
-    color: var(--header-color);
+    font-weight: 700;
+    line-height: 20px;
+    margin-bottom: 15px;
     text-transform: uppercase;
-    margin-bottom: 10px;
+    width: fit-content;
+}
+
+div.footer span{
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19px;
+    color: white;
 }
 
 div.left-footer,
 div.center-footer,
 div.right-footer
 {
-    width: calc(100% / 3);
-    display: grid;
-    align-items: start;
-    justify-content: inherit;
+    flex: 33.3%;
+    flex-wrap: wrap;
 }
 
-div.left-footer > p,
-div.right-footer p{
-    background: none;
-    width: 70%;
-    font-size: 18px;
-}
 div.center-footer{
     gap: 5px;
 }
@@ -356,21 +373,28 @@ div.center-footer div.email
 {
     display: flex;
     gap: 13px;
-    align-items: center;
+    align-items: flex-start;
+    margin-bottom: 10px;
 }
-div.right-footer{
-    gap: 10px;
+
+div.center-footer a{
+    color: white;
 }
+
+
 div.right-footer form{
     display: grid;
     gap: 10px;
+    margin-top: 10px;
 }
 
-div.right-footer input{
-    padding: 15px 10px;
+div.right-footer button{
+    background: none;
+    outline: none;
     border-radius: 10px;
-    outline: 1px solid grey;
-    border: none;
+    padding: 17px 10px;
+    margin-bottom: 10px;
+    color: black;
 }
 
 div.right-footer nav.social-links{
@@ -450,12 +474,14 @@ span.copyright{
     }
 
     div.process-details article > p,
-    div.process-details h2 {
+    div.process-details h2 ,
+    span.contact-title,
+    div.contact-card-info h2{
         text-align: center;
     }
 
     div.process-details article > p{
-        font-size: 35px;
+        font-size: 20px;
     }
 
     div.contact-card form,
@@ -474,7 +500,7 @@ span.copyright{
     }
 
     footer{
-        padding: 10rem 4rem;
+        padding: 10rem 1rem;
     }
 
     div.footer{
@@ -485,32 +511,19 @@ span.copyright{
     div.left-footer,
     div.center-footer,
     div.right-footer {
-        width: 100%;
-        justify-content: unset;
-        justify-items: center;
-        gap:unset;
+       text-align: center;
     }
 
     div.center-footer{
         display: flex;
         flex-direction: column;
         align-items: center;
+        gap: unset;
     }
 
-    div.left-footer > p,
-    div.right-footer p ,
-    div.footer h2 {
-    text-align: center;
-    }
-
-    div.left-footer > p,
-    div.right-footer p {
-        width: 100%;
-    }
 
     div.right-footer form {
-        margin: 40px auto;
-        width: inherit;
+        margin-top: 7px;
     }
     
 }
