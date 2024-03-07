@@ -137,7 +137,8 @@ main{
 
 section.request-inspection,
 section.janitor-display,
-section.contact{
+section.contact,
+section.service{
     width: 100%;
     background-color: white;
 }
@@ -158,7 +159,9 @@ div.request-inspection-header{
 
 div.request-inspection-header span,
 span.contact-title,
-div.contact-card-info h2 {
+div.contact-card-info h2,
+div.service-child p
+    {
     font-family: 'Archivo', sans-serif;
     font-size: 30px;
     color: #4D89FC;
@@ -183,16 +186,80 @@ div.row button{
     border-radius: 12px;
     padding: 17px 10px;
     margin-bottom: 10px;
-    /* background: white; */
 }
 input::placeholder {
     color: #3a3a3a;
     opacity: .3;
 }
 
+section.service{
+    display: flex;
+}
+
+div.service-child{
+    position: relative;
+    width: inherit;
+    padding: 20px 0;
+}
+
+
+div.service-child > p{
+    width: 80%;
+    margin: 20px auto 0 auto;
+}
+
+div.service-images{
+    display: grid;
+    position: relative;
+    height: 90%;
+}
+
+div.service-images p{
+    position: absolute;
+    bottom: 3%;
+    left: 45%;
+    margin-bottom: 10px;
+}
+
+
+div.span-buttons{
+    display: flex;
+    gap: 10px;
+    position: absolute;
+    bottom: 40px;
+    left: 49%;
+}
+div.span-buttons span{
+    width: 10px;
+    height: 10px;
+    cursor: pointer;
+    background: white;
+    display: block;
+    border-radius: 50%;
+    border: none;
+    outline: 1px solid lightgrey;
+}
+
+div.span-buttons span:hover{
+    background: var(--button-bg);
+}
+
+.active{
+    display: block;
+    transition: all 10s ease-out;
+    width: 100%;
+}
+
+.active-span{
+    background: var(--button-bg) !important;
+}
+
+.hidden{
+    display: none;
+}
+
 section.working-process{
     display: flex;
-    /* grid-template-columns: 1fr 1fr; */
     width: 100%;
 }
 
@@ -305,12 +372,13 @@ div.contact-options img{
 
 div.contact-option-detail{
     display: grid;
-    gap: 11px;
+    gap: 8px;
 }
 
 div.contact-option-detail a{
     color: var(--header-color);
-    font-size: 18px;
+    font-size: 15px;
+    font-weight: 300;
 }
 /**End of main styling **/
 
@@ -374,7 +442,8 @@ div.center-footer div.email
     display: flex;
     gap: 13px;
     align-items: flex-start;
-    margin-bottom: 10px;
+    /* width: 80%; */
+    margin: 10px auto;
 }
 
 div.center-footer a{
@@ -394,6 +463,11 @@ div.right-footer button{
     border-radius: 10px;
     padding: 17px 10px;
     margin-bottom: 10px;
+    color: white;
+}
+
+div.right-footer button:hover{
+    background: white;
     color: black;
 }
 
@@ -426,6 +500,9 @@ span.copyright{
         gap: 10px;
     }
 
+    div.service-images p{
+        bottom: 6%;
+    }
 
     section.working-process{
         flex-direction: column-reverse;
@@ -467,6 +544,11 @@ span.copyright{
         width: 100%;
         grid-template-columns: auto;
         justify-content: unset;
+    }
+
+    div.service-images p{
+        bottom: 10%;
+        left: 43%;
     }
 
     div.process-details {
@@ -521,6 +603,13 @@ span.copyright{
         gap: unset;
     }
 
+    div.center-footer div.location,
+    div.center-footer div.telephone,
+    div.center-footer div.email
+    {
+        width: 80%;
+        justify-content: center;
+    }
 
     div.right-footer form {
         margin-top: 7px;
@@ -548,8 +637,6 @@ span.copyright{
     }
     button.hamburger{
         display: block;
-        /* position: absolute; */
-        /* right: 10px; */
         width: 30px;
         background: none;
         outline: none;
@@ -560,6 +647,11 @@ span.copyright{
         height: 2px;
         background: var(--main-header-color);
         position: relative;
+    }
+
+    div.service-images p{
+        margin-bottom: 30px;
+        left: 30%;
     }
 
     div.hamburger-menu::after{
